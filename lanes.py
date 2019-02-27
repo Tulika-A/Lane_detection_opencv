@@ -65,7 +65,6 @@ def average_slope_intercept(image, lines):
     ##print("Left line :", left_line)
     ##print("Right line:", right_line)
     return np.array([left_line, right_line])
-'''
 
 
 capture_video = cv2.VideoCapture("test2.mp4/test2.mp4")
