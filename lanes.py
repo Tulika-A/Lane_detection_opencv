@@ -66,29 +66,7 @@ def average_slope_intercept(image, lines):
     ##print("Right line:", right_line)
     return np.array([left_line, right_line])
 '''
-## Read in in the image
-image = cv2.imread('test_image.jpg')
 
-##Making a deep copy of the image through numpy. A simple/shallow copy would make changes to the original image as well
-lane_image = np.copy(image)
-
-##Using canny edge detector
-canny_detected = canny(lane_image)
-
-##extracting region of interest
-roi_image = region_of_interest(canny_detected)
-
-##detecting lines
-lines = cv2.HoughLinesP(roi_image,2, np.pi/180, 100, np.array([]), minLineLength = 40, maxLineGap = 5)
-averaged_lines = average_slope_intercept(lane_image, lines)
-line_displayed = displayLines(lane_image, averaged_lines)
-final_image = cv2.addWeighted(lane_image, 0.8, line_displayed, 1, 1)
-
-##Display image
-cv2.imshow('Detected Image',final_image)
-
-cv2.waitKey(0)
-'''
 
 capture_video = cv2.VideoCapture("test2.mp4/test2.mp4")
 while(capture_video.isOpened()):
